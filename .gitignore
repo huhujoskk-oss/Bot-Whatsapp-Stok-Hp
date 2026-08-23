@@ -1,0 +1,9 @@
+node_modules/
+data/wa-session/
+data/*.db
+data/*.db-*
+.env
+.wwebjs_auth/
+.wwebjs_cache/
+*.log
+.vscode/sftp.json

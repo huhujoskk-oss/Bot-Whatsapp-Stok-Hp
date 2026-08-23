@@ -1,0 +1,20 @@
+{
+  "name": "vivo-stock-bot",
+  "version": "2.0.0",
+  "description": "Bot WhatsApp untuk manajemen stok HP Vivo dengan input IMEI manual di grup",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed": "node scripts/seed.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "dotenv": "^16.4.7",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.26.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
