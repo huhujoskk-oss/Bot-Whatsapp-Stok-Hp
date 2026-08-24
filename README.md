@@ -1,4 +1,4 @@
-# 🤖 Bot Stok Vivo (WhatsApp)
+# 🤖 Bot Stok HP (WhatsApp)
 
 Bot WhatsApp untuk manajemen stok HP Vivo. Cukup **ketik nomor IMEI** di grup,
 bot otomatis mengurangi stok dan mengirim laporan sisa stok ke grup.
