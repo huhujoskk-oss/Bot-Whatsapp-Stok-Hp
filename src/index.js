@@ -31,8 +31,23 @@ function log(...args) {
   console.log(new Date().toISOString(), "-", ...args);
 }
 
-// --- QR untuk login pertama kali ---
-client.on("qr", (qr) => {
+// --- Login pertama kali: QR, atau kode pairing kalau BOT_NUMBER diisi ---
+let pairingRequested = false;
+client.on("qr", async (qr) => {
+  if (config.BOT_NUMBER) {
+    if (pairingRequested) return; // event qr bisa muncul berkali-kali sebelum discan
+    pairingRequested = true;
+    try {
+      const code = await client.requestPairingCode(config.BOT_NUMBER);
+      log(`🔑 Kode pairing: ${code}`);
+      log('   Masukkan di HP: WhatsApp > Perangkat Tertaut > Tautkan dengan nomor telepon.');
+    } catch (e) {
+      log("❌ Gagal meminta kode pairing:", e.message);
+      pairingRequested = false;
+    }
+    return;
+  }
+
   console.log("\n📱 Scan QR ini dengan WhatsApp (Perangkat Tertaut):\n");
   qrcode.generate(qr, { small: true });
 });

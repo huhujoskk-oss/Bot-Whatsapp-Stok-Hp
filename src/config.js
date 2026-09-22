@@ -25,6 +25,12 @@ module.exports = {
   // Kosongkan dulu -> jalankan bot, ketik "#id" di grup untuk lihat ID-nya.
   GROUP_ID: process.env.GROUP_ID || "",
 
+  // Nomor WhatsApp bot ini sendiri (kode negara + nomor, tanpa "+"/0 di depan).
+  // Diisi -> login pakai KODE PAIRING (tanpa scan QR).
+  // Dikosongkan -> login seperti biasa pakai QR di terminal.
+  // Contoh: BOT_NUMBER=6281234567890
+  BOT_NUMBER: (process.env.BOT_NUMBER || "").replace(/\D/g, ""),
+
   // Nomor admin (boleh menambah/menghapus stok). Pisah dengan koma.
   // Contoh: ADMINS=6281234567890,628987654321
   ADMINS: parseList(process.env.ADMINS),

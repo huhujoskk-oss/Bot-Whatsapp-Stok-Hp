@@ -1,0 +1,21 @@
+# ==== .clineignore — file/folder yang diabaikan oleh Cline ====
+
+# Dependensi & build
+node_modules/
+
+# Data sensitif / lokal (jangan dibaca Cline)
+.env
+.env.*
+
+# Database & sesi WhatsApp (data runtime, bukan source code)
+data/wa-session/
+data/*.db
+data/*.db-*
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Log & cache
+*.log
+
+# Konfigurasi pribadi
+.vscode/sftp.json
